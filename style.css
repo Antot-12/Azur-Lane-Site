@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
+body {
+    font-family: 'Rajdhani', sans-serif;
+    /* Змінено на Rajdhani Bold */
+    font-weight: 700;
+    /* Встановлено жирний шрифт */
+    background-color: #111;
+    /* Темний фон */
+    color: #0ff;
+    /* Синій текст */
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.footer {
+    height: 60px;
+    font-size: 1.7em;
+    background-color: #333;
+    color: #ffcc00;
+    text-align: center;
+    line-height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 3.5%;
+    right: 3.5%;
+    order: 1;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+a:hover {
+    text-decoration: underline;
+}
+h2 {
+    color: #ff00ff;
+    /* Фіолетовий для заголовків */
+}
+#cart-display {
+    background-color: #212121;
+    color: #0ff;
+    padding: 10px;
+    margin-top: 10px;
+}
+.cart-menu-item {
+    position: relative;
+    /* Для позиціонування вікна кошика */
+}
+.cart-popup {
+    display: none;
+    /* Спочатку кошик схований */
+    position: absolute;
+    /* Абсолютне позиціонування */
+    right: 0;
+    /* Відступ зправа */
+    background-color: #212121;
+    /* Темний фон */
+    color: #0ff;
+    /* Синій текст */
+    border: 1px solid #ff00ff;
+    /* Фіолетова рамка */
+    padding: 10px;
+    width: 200px;
+    /* Ширина вікна кошика */
+    box-shadow: 0 0 10px #ff00ff;
+    /* Фіолетовий неоновий світіння */
+    z-index: 100;
+    /* Забезпечує, що вікно буде над іншими елементами */
+}
+#cart:hover + .cart-popup {
+    display: block;
+}
+.glitch {
+    position: relative;
+    color: #ff00ff;
+    font-size: 24px;
+}
+.glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -1px 0 red;
+    top: 0;
+    color: #0ff;
+    background: #111;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: 1px 0 blue;
+    top: 0;
+    color: #0ff;
+    background: #111;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: noise-anim-2 3s infinite linear alternate-reverse;
+}
+@keyframes noise-anim {
+    0% {
+        clip: rect(44px, 9999px, 44px, 0);
+    }
+    5% {
+        clip: rect(33px, 9999px, 33px, 0);
+    }
+    /* ... Додати більше кадрів для анімації ... */
+    100% {
+        clip: rect(88px, 9999px, 88px, 0);
+    }
+}
+@keyframes noise-anim-2 {
+    0% {
+        clip: rect(22px, 9999px, 22px, 0);
+    }
+    5% {
+        clip: rect(77px, 9999px, 77px, 0);
+    }
+    /* ... Додати більше кадрів для анімації ... */
+    100% {
+        clip: rect(20px, 9999px, 20px, 0);
+    }
+}
+@keyframes glitch {
+    0%, 100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate(-2px, 0);
+        opacity: 0.8;
+    }
+    30%, 50%, 70% {
+        transform: translate(2px, 0);
+        opacity: 0.8;
+    }
+}
+.glitch {
+    position: relative;
+    display: inline-block;
+    animation: glitch 1s infinite;
+}
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    color: #0f0;
+    overflow: hidden;
+}
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 red;
+    animation: glitch 500ms infinite alternate-reverse;
+}
+.glitch::after {
+    left: -2px;
+    text-shadow: 1px 0 blue;
+    animation: glitch 250ms infinite alternate-reverse;
+}
+#cart-display {
+    display: none;
+    /* Спочатку кошик схований */
+    background-color: #212121;
+    /* Темний фон */
+    color: #0ff;
+    /* Синій текст */
+    border: 1px solid #ff00ff;
+    /* Фіолетова рамка */
+    padding: 10px;
+    margin-top: 10px;
+    position: absolute;
+    /* Абсолютне позиціонування */
+    right: 10px;
+    /* Відступ зправа */
+    width: 200px;
+    /* Ширина вікна кошика */
+    box-shadow: 0 0 10px #ff00ff;
+    /* Фіолетовий неоновий світіння */
+    z-index: 100;
+    /* Забезпечує, що вікно буде над іншими елементами */
+}
+#cart h2 {
+    animation: glitch 500ms infinite;
+}
+.logo-container {
+    position: absolute;
+    /* Змініть на relative, якщо не хочете, щоб лого перекривало інші елементи */
+    top: 10px;
+    /* Відступ зверху */
+    left: 10px;
+    /* Відступ зліва */
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    /* Збільшено значення, щоб логотип був вище інших елементів */
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-container img {
+    height: 150px;
+    /* Встановіть висоту логотипу за бажанням */
+    margin-right: 10px;
+}
+.logo-container span {
+    color: #fff;
+    /* Колір тексту, можна змінити */
+    font-size: 1.5em;
+    /* Розмір шрифту, можна змінити */
+    font-weight: bold;
+}
+.main-content {
+    min-height: 180vh; /* Встановлює мінімальну висоту, щоб вона була рівною висоті вікна переглядача */
+    padding-bottom: 60px; /* Додає відступ знизу, щоб футер не перекривав вміст */
+    flex: 1;
+}
+.video-background {
+    position: fixed;
+    top: 0;
+    /* Встановлює відео від самого верху */
+    left: 0;
+    /* Встановлює відео від самого лівого краю */
+    width: 100vw;
+    /* Ширина відео рівна ширині вікна перегляду */
+    height: 100vh;
+    /* Висота відео рівна висоті вікна перегляду */
+    z-index: -1;
+    /* Відео буде під іншим контентом */
+}
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Відео покриває весь контейнер */
+}
+.overlay {
+    position: fixed;
+    top: 100px;
+    /* Висота хедера, змініть відповідно до вашого дизайну */
+    left: 3.5%;
+    right: 3.5%;
+    width: auto;
+    height: calc(100% - 160px);
+    /* Висота віднімає висоту хедера */
+    background: rgba(0, 0, 0, 0.8);
+    /* Менше, ніж у хедера, але достатньо для відображення над іншими елементами */
+    overflow: auto;
+    z-index: 1;
+
+    margin-bottom: 100px; /* Висота футера або більше */
+}
+header {
+    z-index: 20;
+    /* Забезпечує, що хедер буде над полоскою */
+}
+a, .add-to-cart, .glitch, h2 {
+    color: #d28600;
+    /* Жовтий текст для посилань, кнопок, ефекту Glitch та заголовків h2 */
+}
+header {
+    background-color: #ffcc00;
+    /* Яскравий неоновий жовтий */
+    color: #1a1a1a;
+    /* Темний колір тексту для контрасту */
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    /* Встановлює хедер як контейнер для абсолютного позиціонування */
+}
+.cyberpunk-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 5 елементів в рядку */
+    gap: 15px;
+    /* Відстань між елементами */
+    padding: 20px;
+}
+@media (max-width: 1200px) {
+    .cyberpunk-menu {
+        grid-template-columns: repeat(2, 1fr);
+        /* 4 елементи в рядку для менших екранів */
+    }
+}
+
+@media (max-width: 768px) {
+    .cyberpunk-menu {
+        grid-template-columns: 1fr; /* Кожен елемент займає всю ширину */
+    }
+    .menu-item {
+        width: 100%; /* Повна ширина для кожного бургера */
+        margin-bottom: 10px; /* Відступ між бургерами */
+    }
+
+    .body {
+        font-size: 16px; /* Або інший зручний розмір */
+    }
+    .container {
+        width: 100%;
+        padding: 0 15px; /* Додає відступи з обох боків контейнера */
+        overflow-x: hidden;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            width: 100%;
+            padding: 0 15px; /* Додає відступи з обох боків контейнера */
+        }
+
+        .reservation-form {
+            width: 100%; /* Задає ширину форми */
+            margin-bottom: 20px; /* Додає відступ знизу для кожної форми */
+            box-sizing: border-box; /* Включає внутрішні відступи та рамки в загальну ширину */
+        }
+
+        .reservation-form input,
+        .reservation-form select,
+        .reservation-form button {
+            width: calc(100% - 20px); /* Задає ширину елементів, вираховуючи внутрішні відступи */
+            margin: 10px 0; /* Додає відступи між елементами */
+            box-sizing: border-box; /* Включає внутрішні відступи та рамки в загальну ширину */
+        }
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 5px 0; /* Зменшення відступів між елементами */
+        }
+        nav ul li a {
+            font-size: 14px; /* Зменшення розміру шрифту */
+        }
+        .split-amount {
+            display: block; /* Змінює відображення на блокове */
+        }
+    }
+
+}
+.menu-item {
+    background: #111;
+    /* Темний фон для кожної плитки */
+    padding: 5px;
+    /* Відступ всередині плитки */
+    border-radius: 10px;
+    /* Закруглені кути */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    /* Світіння навколо плитки */
+    text-align: center;
+    /* Вирівнювання тексту по центру */
+}
+.item-image {
+    max-width: 100%;
+    /* Зображення адаптується до ширини плитки */
+    height: auto;
+    /* Висота зображення автоматично регулюється */
+    border-radius: 5px;
+    /* Закруглені кути для зображення */
+}
+.item-name .full-name {
+    display: block;
+    font-size: 1.2em;
+    color: #ffcc00;
+    /* Жовтий текст */
+}
+.item-name .short-name {
+    display: block;
+    font-size: 0.8em;
+    color: #d28600;
+    /* Світло-жовтий текст */
+}
+.item-image {
+    max-width: 100%;
+    height: auto;
+    margin: 5px 0;
+}
+.item-price {
+    font-size: 1.1em;
+    color: #0ff;
+    /* Синій текст */
+}
+.add-to-cart {
+    background-color: #ff00ff;
+    /* Фіолетовий */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.add-to-cart:hover {
+    background-color: #d28600;
+    /* Жовтий */
+}
+.azur-lane-title {
+    font-size: 24px;
+    /* Adjust the size as needed */
+    color: #FFFFFF;
+    /* Choose a color that contrasts well with the background */
+    font-family: 'Arial', sans-serif;
+    /* Choose a readable font */
+    text-shadow: 2px 2px 4px #000000;
+    /* Optional: Adds a shadow for better readability */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+html {
+    scrollbar-width: none;
+    /* For Firefox */
+}
+body {
+    margin-right: -15px;
+    /* Hide scrollbar space */
+    overflow-y: scroll;
+    /* Still allow scrolling */
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.btn {
+    margin: 10pt;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+.btn__content_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #ffb300;
+    clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+}
+.btn__label_menu {
+    font-size: .40rem;
+    position: absolute;
+    bottom: -1px;
+    right: 8%;
+    padding: 0 5px;
+    background-color: #ffb300;
+    z-index: 3;
+    border-left: 1px solid #136377;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Темний фон з прозорістю */
+}
+.modal-content {
+    background-color: #111;
+    /* Темний фон, як на основній сторінці */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ff00ff;
+    /* Фіолетова рамка */
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: #0ff;
+    /* Синій текст */
+    font-family: 'Rajdhani', sans-serif;
+    /* Шрифт Rajdhani */
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+.close-button {
+    color: #ffb300;
+    /* Жовтий колір */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover, .close-button:focus {
+    color: #ffcc00;
+    /* Світліший відтінок жовтого при наведенні та фокусі */
+    text-decoration: none;
+    cursor: pointer;
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+.reservation-form, .split-bill, .bank-system {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ff00ff;
+    border-radius: 5px;
+}
+/* Стилі для контейнера */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 2em;
+}
+
+/* Стилі для форм */
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Стилі для текстових полів */
+.reservation-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ff00ff;
+    border-radius: 4px;
+}
+/* Стилі для кнопок */
+.reservation-form button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+/* Стилі для вибору столика */
+.reservation-form select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+/* Стилі для результату розділення рахунку */
+.split-bill #result {
+    margin-top: 10px;
+    color: #333;
+}
+.group-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+.group-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ff00ff;
+    border-radius: 4px;
+}
+.group-form button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}

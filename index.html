@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azur Lane</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="button_c2077.css">
+    <link rel="stylesheet" href="cyberpunk.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="cyber-razor-bottom bg-dark fg-white p-3 mt-4">
+    <div class="logo-container">
+        <img src="pics/logo.png" alt="Azur Lane Logo">
+        <span class="azur-lane-title">Azur Lane</span>
+    </div>
+    <nav>
+        <ul>
+            <div class="cyber-glitch-1">
+                <button class="btn" id="registerBtn">
+                    <span class="btn__content_menu">Registration</span>
+                    <span class="btn__glitch"></span>
+                    <span class="btn__label_menu">r25</span>
+                </button>
+            </div>
+            <div class="cyber-glitch-1">
+                <button class="btn login-btn">
+                    <span class="btn__content_menu">Login</span>
+                    <span class="btn__glitch"></span>
+                    <span class="btn__label_menu">r25</span>
+                </button>
+            </div>
+            <div class="cyber-glitch-1">
+                <button class="btn" id="cart-button">
+                    <span class="btn__content_menu">Cart</span>
+                    <span class="btn__glitch"></span>
+                    <span class="btn__label_menu">r25</span>
+                </button>
+            </div>
+            <!--            <li><a href="#menu" >Меню</a></li>-->
+            <!--            <li><a href="#registration">Реєстрація</a></li>-->
+            <!--            <li class="cart-menu-item">-->
+            <!--                <a href="#cart" class="glitch" data-text="Кошик">Кошик</a>-->
+            <!--                <div id="cart-popup" class="cart-popup">-->
+            <!--                    <div id="cart-display">Кошик порожній</div>-->
+            <!--                </div>-->
+            <!--            </li>-->
+        </ul>
+    </nav>
+</div>
+<div class="overlay">
+    <!--    <button class="btn">-->
+    <!--        <span class="btn__content">Get your copy now_</span>-->
+    <!--        <span class="btn__glitch"></span>-->
+    <!--        <span class="btn__label">r25</span>-->
+    <!--    </button>-->
+    <div id="menu-table" class="cyberpunk-menu">
+        <!-- Повторюємо цей блок для кожного елемента меню -->
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">"Here we go again"</span>
+                <span class="short-name">HA</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A classic delight featuring a juicy beef patty, crisp lettuce, ripe tomatoes, and our signature sauce, all nestled between a toasted sesame bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">10 €</div>
+            <br>
+            <!--            <button class="add-to-cart" data-menu-item-id="1" data-menu-item-name="Burger">-->
+            <button class="btn" data-menu-item-id="1" data-menu-item-name="Burger">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+            <!--            <button class="add-to-cart" data-menu-item-id="1">Додати до кошика</button>-->
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">"Smrt"</span>
+                <span class="short-name">Cy</span>
+            </div>
+            <img src="pics/bur.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>An upscale twist on the traditional, featuring a hand-formed Angus beef patty, artisanal brioche bun, heirloom tomatoes, organic green leaf lettuce, and our house-made secret sauce.</p>
+            </div>
+            <hr>
+            <div class="item-price">6 €</div>
+            <br>
+            <button class="btn add-to-cart" data-menu-item-id="2">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+        <!-- Повторюємо цей блок для кожного елемента меню -->
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name"> "Manager"</span>
+                <span class="short-name">B8</span>
+            </div>
+            <img src="pics/burger.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A sophisticated blend of flavors featuring a juicy beef patty, crumbled blue cheese, fresh arugula, caramelized onions, and a tangy balsamic glaze on a ciabatta bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">12.3 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="3">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+            <!--            <button class="add-to-cart" data-menu-item-id="1">Додати до кошика</button>-->
+        </div>
+        <!-- Повторюємо цей блок для кожного елемента меню -->
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Miro Chill</span>
+                <span class="short-name">B0</span>
+            </div>
+            <img src="pics/miro.png" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A garden-fresh option with a grilled veggie patty, ripe avocado slices, alfalfa sprouts, juicy tomato, and a vegan aioli on a whole wheat bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">13 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="4">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+            <!--            <button class="add-to-cart" data-menu-item-id="1">Додати до кошика</button>-->
+        </div>
+        <!-- Повторюємо цей блок для кожного елемента меню -->
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Smooth Janko</span>
+                <span class="short-name">D69</span>
+            </div>
+            <img src="pics/drink.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A dessert enthusiast's delight, this milkshake combines rich chocolate ice cream, swirls of salted caramel, brownie chunks, and whipped cream, topped with chocolate syrup and a pretzel stick.</p>
+            </div>
+            <hr>
+            <div class="item-price">6.90 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+            <!--            <button class="add-to-cart" data-menu-item-id="1">Додати до кошика</button>-->
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Burger</span>
+                <span class="short-name">B4</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A rich and savory choice featuring a beef patty topped with sautéed mushrooms, melted Swiss cheese, and a creamy garlic aioli on a toasted brioche bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">15 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Burger</span>
+                <span class="short-name">B5</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A tropical twist with a beef patty, grilled pineapple, smoked ham, melted mozzarella, and a sweet and tangy Hawaiian BBQ sauce on a kaiser roll.</p>
+            </div>
+            <hr>
+            <div class="item-price">15 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Burger</span>
+                <span class="short-name">B6</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A timeless favorite with a perfectly grilled beef patty, American cheese, iceberg lettuce, sliced tomato, pickles, and classic burger sauce on a soft sesame bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">15 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Burger</span>
+                <span class="short-name">B7</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>A lighter but flavorful option with a seasoned turkey patty, creamy avocado, crisp lettuce, vine-ripened tomato, and a zesty lime mayo on a multigrain bun.</p>
+            </div>
+            <hr>
+            <div class="item-price">15 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+        <div class="menu-item">
+            <div class="item-name">
+                <span class="full-name">Burger</span>
+                <span class="short-name">B8</span>
+            </div>
+            <img src="pics/food.jpg" alt="Delicious Burger" class="item-image">
+            <div class="item-description">
+                <p>Turn up the heat with a spicy beef patty, pepper jack cheese, fresh jalapeños, crispy tortilla strips, and a bold chipotle mayo on a toasted artisan bun</p>
+            </div>
+            <hr>
+            <div class="item-price">15 €</div>
+            <br>
+            <button class="btn" data-menu-item-id="1">
+                <span class="btn__content">Add to cart</span>
+                <span class="btn__glitch"></span>
+                <span class="btn__label">r25</span>
+            </button>
+        </div>
+    </div>
+    <!-- Модальне вікно для логіну -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="cyber-glitch-1">Login</h2>
+            <form id="loginForm">
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="text" placeholder="Login" required>
+                </div>
+                <br>
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <br>
+                <button class="cyber-button-small bg-blue fg-white m-2 vt-bot" type="submit">Sumbit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальне вікно для реєстрації -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 class="cyber-glitch-1">Registration</h2>
+            <form id="registerForm">
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="text" placeholder="Login" required>
+                </div>
+                <br>
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <br>
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <br>
+                <div class="cyber-input mb-4 ac-purple fg-green">
+                    <input type="password" placeholder="Card Number" required>
+                </div>
+                <br>
+                <button class="cyber-button-small bg-blue fg-white m-2 vt-bot" type="submit">Sumbit</button>
+            </form>
+        </div>
+    </div>
+    <!-- Модальне вікно кошика -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Your cart</h2>
+            <div id="cartItems"></div>
+            <button id="makeOrderButton" class="cyber-button-small bg-blue fg-white m-2 vt-bot" type="submit">Make order</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="reservation-form">
+            <div class="cyber-glitch-1">
+                <h3 class="cyber-h">Reservation table</h3>
+            </div>
+            <input type="text" id="phone" placeholder="Password">
+            <select id="table">
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+            </select>
+            <br>
+            <button onclick="reserveTable(); alert('Table successfully reserved!')">Book</button>
+        </div>
+        <div class="reservation-form">
+            <div class="cyber-glitch-1">
+                <h3 class="cyber-h">Join to the table</h3>
+            </div>
+            <input type="number" id="joinTableNumber" placeholder="Table number" min="1" max="10">
+            <input type="password" id="joinTablePassword" placeholder="Password">
+            <br>
+            <button onclick="joinTable(); alert('Successfully joined the table!')">Join</button>
+        </div>
+        <div class="reservation-form">
+            <div class="cyber-glitch-1">
+                <h3 class="cyber-h">Add person to the subgroup</h3>
+            </div>
+            <input type="text" id="personName" placeholder="Name">
+            <button id="addToGroup" onclick="addToGroup()">Add</button>
+            <div id="groupList"></div>
+        </div>
+        <div class="reservation-form">
+            <div class="split-amount">
+                <div class="cyber-glitch-1">
+                    <h3 class="cyber-h">Split the sum</h3>
+                </div>
+                <input type="number" id="amountToSplit" placeholder="Sum for splitting">
+                <button onclick="splitAmount()">Split</button>
+                <div id="splitResult"></div>
+                <button onclick="payAmount()" id="payButton" style="display: none;">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="video-background">
+    <video id="bg-video" autoplay loop muted>
+        <source src="pics/bg.mp4" type="video/mp4">
+    </video>
+</div>
+
+<footer>
+    <div class="footer">
+        <p class="cyber-glitch-2">Azur Lane &copy; 2023 Azur Lane</p>
+    </div>
+</footer>
+</body>
+</html>
